@@ -1,19 +1,29 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 
-# Create the Flask application
+# Create Flask app
 app = Flask(__name__)
 
-# Homepage Route
+# Routes for various pages
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# About Page Route
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-# Run the Flask web application
+@app.route('/features')
+def features():
+    return render_template('features.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/demo')
+def demo():
+    return render_template('demo.html')
+
+# Run the app
 if __name__ == '__main__':
     app.run(debug=True)
-
